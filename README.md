@@ -213,3 +213,47 @@ Encrypted Response to Client
 - Model: Binary CNN classifier (.h5)
 
 - Security: SHA-256 hashing, symmetric encryption, timestamps
+
+
+## How to Run
+### Hardware Setup
+
+- Connect R307 sensor to Raspberry Pi UART pins
+
+- Enable UART on Raspberry Pi
+
+### Install Dependencies
+```python
+pip install pyfingerprint opencv-python tensorflow cryptography pillow numpy
+```
+
+### Capture Fingerprint Dataset
+```python
+python Image_Download.py
+```
+
+### Train the Model
+
+Open and run:
+
+Binary_Biometric_model.ipynb
+
+### Start the Server
+```python
+python server.py
+```
+
+### Run the Client
+```python
+python client.py
+```
+
+## Key Highlights
+
+- Combines biometrics + cryptography + DL
+
+- Protects against replay & tampering attacks
+
+- Modular design (easy to extend)
+
+- Suitable for academic research, patents, and real-world demos
